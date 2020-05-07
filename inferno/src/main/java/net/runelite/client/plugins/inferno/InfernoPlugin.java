@@ -858,6 +858,14 @@ public class InfernoPlugin extends Plugin
 				|| (amountInArea == bestAmountInArea && distanceToPlayer < bestDistanceToPlayer))
 			{
 				bestNibbler = infernoNPC;
+
+				// if just the bestDistanceToPlayer has improved, this statement will do nothing
+				bestAmountInArea = amountInArea; 
+
+				if (distanceToPlayer < bestDistanceToPlayer)
+				{
+					bestDistanceToPlayer = distanceToPlayer;
+				}
 			}
 		}
 
